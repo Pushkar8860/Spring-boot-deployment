@@ -11,6 +11,11 @@ pipeline{
                 bat 'mvn clean install -e -DskipTests'
             }
         }
+        stage('Build Docker Image') {
+            steps {
+                bat 'docker build -t .'
+            }
+        }
     }
 }
 
