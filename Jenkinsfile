@@ -21,9 +21,9 @@ pipeline{
         stage('Push Image to Docker hub') {
             steps {
                 script{
-                    withCredentials([string(credentialsId: 'pushkarlearndocker', variable: 'dockerhub')]) {
-                        bat 'docker login -u pushkarlearndocker -p ${dockerhub}'
-                        bat 'docker push pushkarlearndocker/spring-boot-automation.jar .'
+                    withCredentials([string(credentialsId: 'docker-hub-new-id', variable: 'docker-hub-new')]) {
+                        bat 'docker login -u pushkarlearndocker -p ${docker-hub-new}'
+                        bat 'docker push pushkarlearndocker/spring-boot-automation.jar'
                     }
                 }    
             }
