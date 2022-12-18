@@ -14,7 +14,7 @@ pipeline{
         stage('Build Docker Image') {
             steps {
                 script{
-                    bat 'docker build -t .'
+                    bat 'docker build -t pushkarlearndocker/spring-boot-automation.jar .'
                 }
                     
             }
